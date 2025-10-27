@@ -213,6 +213,21 @@ select {
 .sm-12 {
   width: calc(100% / 12 * 12);
 }
+.sm-justify-start {
+  justify-content: flex-start;
+}
+.sm-justify-center {
+  justify-content: center;
+}
+.sm-justify-end {
+  justify-content: flex-end;
+}
+.sm-justify-between {
+  justify-content: space-between;
+}
+.sm-justify-around {
+  justify-content: space-around;
+}
 
 /* --- Medium Screen Columns (md) --- */
 @media (min-width: 768px) {
@@ -260,6 +275,21 @@ select {
   }
   .md-12 {
     width: calc(100% / 12 * 12);
+  }
+  .md-justify-start {
+    justify-content: flex-start;
+  }
+  .md-justify-center {
+    justify-content: center;
+  }
+  .md-justify-end {
+    justify-content: flex-end;
+  }
+  .md-justify-between {
+    justify-content: space-between;
+  }
+  .md-justify-around {
+    justify-content: space-around;
   }
 }
 
@@ -309,5 +339,20 @@ select {
   }
   .lg-12 {
     width: calc(100% / 12 * 12);
+  }
+  .lg-justify-start {
+    justify-content: flex-start;
+  }
+  .lg-justify-center {
+    justify-content: center;
+  }
+  .lg-justify-end {
+    justify-content: flex-end;
+  }
+  .lg-justify-between {
+    justify-content: space-between;
+  }
+  .lg-justify-around {
+    justify-content: space-around;
   }
 }
