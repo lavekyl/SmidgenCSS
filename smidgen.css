@@ -1,3 +1,9 @@
+/*!
+ * Smidgen CSS v2.0
+ * A featherlight, no-nonsense CSS grid and layout system.
+ * MIT License — https://smidgencss.com
+ */
+
 /*------------------------------------*\
   #SIMPLE CSS RESET (Remove if not needed)
 \*------------------------------------*/
@@ -41,6 +47,7 @@ select {
 \*------------------------------------*/
 :root {
   --grid-gutter: 1.5rem;
+  --wrapper-padding: 3rem;
   --container-narrow: 900px;
   --container-standard: 1140px;
   --container-wide: 1320px;
@@ -51,8 +58,8 @@ select {
 \*------------------------------------*/
 .content-wrapper {
   width: 100%;
-  padding-top: 3rem;
-  padding-bottom: 3rem;
+  padding-top: var(--wrapper-padding);
+  padding-bottom: var(--wrapper-padding);
 }
 
 /*------------------------------------*\
@@ -81,7 +88,6 @@ select {
 /*------------------------------------*\
   #GRID WRAPPER & GUTTERS
 \*------------------------------------*/
-
 .flex-grid {
   display: flex;
   flex-wrap: wrap;
@@ -90,6 +96,7 @@ select {
 .flex-grid.with-gutters {
   margin-left: calc(var(--grid-gutter) / -2);
   margin-right: calc(var(--grid-gutter) / -2);
+  row-gap: var(--grid-gutter);
 }
 
 .flex-grid.with-gutters > .flex-col {
@@ -100,7 +107,6 @@ select {
 /*------------------------------------*\
   #GRID COLUMNS (CELLS)
 \*------------------------------------*/
-
 .flex-col {
   box-sizing: border-box;
   width: 100%;
@@ -119,7 +125,17 @@ select {
 }
 
 /*------------------------------------*\
-  #ALIGNMENT UTILITIES (NEW)
+  #FLEX DIRECTION UTILITIES
+\*------------------------------------*/
+.flex-row {
+  flex-direction: row;
+}
+.flex-row-reverse {
+  flex-direction: row-reverse;
+}
+
+/*------------------------------------*\
+  #ALIGNMENT UTILITIES
 \*------------------------------------*/
 
 /* Horizontal Alignment (on .flex-grid container) */
@@ -151,7 +167,7 @@ select {
 }
 .align-stretch {
   align-items: stretch;
-} /* Default behavior */
+}
 
 /* Self Alignment (on individual .flex-col) */
 .self-top {
@@ -167,7 +183,19 @@ select {
   align-self: stretch;
 }
 
-/* --- Small Screen Columns (sm) --- */
+/*------------------------------------*\
+  #ORDER UTILITIES
+\*------------------------------------*/
+.order-first {
+  order: -1;
+}
+.order-last {
+  order: 1;
+}
+
+/*------------------------------------*\
+  #SMALL SCREENS (sm — mobile-first, no media query)
+\*------------------------------------*/
 .sm-auto {
   flex-grow: 1;
   flex-basis: 0;
@@ -213,6 +241,14 @@ select {
 .sm-12 {
   width: calc(100% / 12 * 12);
 }
+
+.sm-flex-row {
+  flex-direction: row;
+}
+.sm-flex-row-reverse {
+  flex-direction: row-reverse;
+}
+
 .sm-justify-start {
   justify-content: flex-start;
 }
@@ -229,7 +265,42 @@ select {
   justify-content: space-around;
 }
 
-/* --- Medium Screen Columns (md) --- */
+.sm-align-top {
+  align-items: flex-start;
+}
+.sm-align-middle {
+  align-items: center;
+}
+.sm-align-bottom {
+  align-items: flex-end;
+}
+.sm-align-stretch {
+  align-items: stretch;
+}
+
+.sm-self-top {
+  align-self: flex-start;
+}
+.sm-self-middle {
+  align-self: center;
+}
+.sm-self-bottom {
+  align-self: flex-end;
+}
+.sm-self-stretch {
+  align-self: stretch;
+}
+
+.sm-order-first {
+  order: -1;
+}
+.sm-order-last {
+  order: 1;
+}
+
+/*------------------------------------*\
+  #MEDIUM SCREENS (md — 768px+)
+\*------------------------------------*/
 @media (min-width: 768px) {
   .md-auto {
     flex-grow: 1;
@@ -276,6 +347,14 @@ select {
   .md-12 {
     width: calc(100% / 12 * 12);
   }
+
+  .md-flex-row {
+    flex-direction: row;
+  }
+  .md-flex-row-reverse {
+    flex-direction: row-reverse;
+  }
+
   .md-justify-start {
     justify-content: flex-start;
   }
@@ -291,9 +370,44 @@ select {
   .md-justify-around {
     justify-content: space-around;
   }
+
+  .md-align-top {
+    align-items: flex-start;
+  }
+  .md-align-middle {
+    align-items: center;
+  }
+  .md-align-bottom {
+    align-items: flex-end;
+  }
+  .md-align-stretch {
+    align-items: stretch;
+  }
+
+  .md-self-top {
+    align-self: flex-start;
+  }
+  .md-self-middle {
+    align-self: center;
+  }
+  .md-self-bottom {
+    align-self: flex-end;
+  }
+  .md-self-stretch {
+    align-self: stretch;
+  }
+
+  .md-order-first {
+    order: -1;
+  }
+  .md-order-last {
+    order: 1;
+  }
 }
 
-/* --- Large Screen Columns (lg) --- */
+/*------------------------------------*\
+  #LARGE SCREENS (lg — 1024px+)
+\*------------------------------------*/
 @media (min-width: 1024px) {
   .lg-auto {
     flex-grow: 1;
@@ -340,6 +454,14 @@ select {
   .lg-12 {
     width: calc(100% / 12 * 12);
   }
+
+  .lg-flex-row {
+    flex-direction: row;
+  }
+  .lg-flex-row-reverse {
+    flex-direction: row-reverse;
+  }
+
   .lg-justify-start {
     justify-content: flex-start;
   }
@@ -354,5 +476,38 @@ select {
   }
   .lg-justify-around {
     justify-content: space-around;
+  }
+
+  .lg-align-top {
+    align-items: flex-start;
+  }
+  .lg-align-middle {
+    align-items: center;
+  }
+  .lg-align-bottom {
+    align-items: flex-end;
+  }
+  .lg-align-stretch {
+    align-items: stretch;
+  }
+
+  .lg-self-top {
+    align-self: flex-start;
+  }
+  .lg-self-middle {
+    align-self: center;
+  }
+  .lg-self-bottom {
+    align-self: flex-end;
+  }
+  .lg-self-stretch {
+    align-self: stretch;
+  }
+
+  .lg-order-first {
+    order: -1;
+  }
+  .lg-order-last {
+    order: 1;
   }
 }

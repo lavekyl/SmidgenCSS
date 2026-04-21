@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -37,8 +37,15 @@
     <style>
       /* Basic Typography & Colors */
       body {
-        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-          Roboto, "Helvetica Neue", Arial, sans-serif;
+        font-family:
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          Roboto,
+          "Helvetica Neue",
+          Arial,
+          sans-serif;
         line-height: 1.6;
         background-color: #fff;
         color: #333;
@@ -87,11 +94,36 @@
         white-space: pre-wrap;
       }
 
+      code {
+        background-color: #f4f4f4;
+        padding: 0.1rem 0.3rem;
+        border-radius: 3px;
+        font-size: 0.9em;
+      }
+
+      pre code {
+        background-color: transparent;
+        padding: 0;
+      }
+
       /* Component Styles */
       .hero {
         background-color: #fff;
         text-align: center;
         border-bottom: 1px solid #eee;
+      }
+
+      .version-badge {
+        display: inline-block;
+        background-color: #222;
+        color: #fff;
+        font-size: 1rem;
+        font-weight: bold;
+        padding: 0.2rem 0.6rem;
+        border-radius: 4px;
+        vertical-align: middle;
+        margin-left: 0.5rem;
+        line-height: 1;
       }
 
       .cta-button {
@@ -102,7 +134,8 @@
         border-radius: 5px;
         font-weight: bold;
         margin-top: 1rem;
-        transition: background-color 0.2s ease-in-out,
+        transition:
+          background-color 0.2s ease-in-out,
           transform 0.2s ease-in-out;
       }
       .cta-button.secondary {
@@ -151,6 +184,15 @@
         margin: 0;
         font-size: 0.9rem;
       }
+
+      /* New in v2 Section */
+      .new-in-v2 {
+        background-color: #f9f9f9;
+        border-bottom: 1px solid #eee;
+      }
+      .new-in-v2 h2 {
+        margin-top: 0;
+      }
     </style>
   </head>
   <body>
@@ -164,7 +206,7 @@
     </div>
     <header class="content-wrapper hero">
       <div class="content-well">
-        <h1 tabindex="0">Smidgen CSS</h1>
+        <h1 tabindex="0">Smidgen CSS <span class="version-badge">v2</span></h1>
         <p>
           A featherlight, no-nonsense CSS grid and layout system built for speed
           and simplicity.
@@ -184,6 +226,70 @@
     </header>
 
     <main>
+      <div class="content-wrapper new-in-v2">
+        <div class="content-well">
+          <h2 tabindex="0">New in v2</h2>
+          <p>
+            Three new utility sets, responsive variants for everything, and a
+            quietly fixed row-gap so wrapped columns breathe. Same class names,
+            same grid math — nothing from v1 breaks.
+          </p>
+
+          <h3 tabindex="0">Order Utilities</h3>
+          <p>
+            Reorder columns without touching markup. Pair with responsive
+            variants for things like "image on top on mobile, on the right on
+            desktop."
+          </p>
+          <div class="flex-grid with-gutters">
+            <div class="flex-col sm-4 order-last">
+              <div class="demo-box">A (<code>order-last</code>)</div>
+            </div>
+            <div class="flex-col sm-4">
+              <div class="demo-box">B</div>
+            </div>
+            <div class="flex-col sm-4 order-first">
+              <div class="demo-box">C (<code>order-first</code>)</div>
+            </div>
+          </div>
+          <p>
+            Source order is A, B, C — visual order is C, B, A. Responsive
+            variants: <code>sm-order-first</code>, <code>md-order-first</code>,
+            <code>lg-order-last</code>, etc.
+          </p>
+
+          <h3 tabindex="0">Flex Direction</h3>
+          <p>
+            Use <code>.flex-row-reverse</code> to flip the horizontal order of
+            columns inside a <code>.flex-grid</code>. Responsive variants let
+            you flip direction per breakpoint.
+          </p>
+          <div class="flex-grid with-gutters flex-row-reverse">
+            <div class="flex-col sm-4"><div class="demo-box">1</div></div>
+            <div class="flex-col sm-4"><div class="demo-box">2</div></div>
+            <div class="flex-col sm-4"><div class="demo-box">3</div></div>
+          </div>
+          <p>
+            Source order is 1, 2, 3 — visual order is 3, 2, 1. Use
+            <code>.flex-row</code> to reset back to default direction at a
+            larger breakpoint.
+          </p>
+
+          <h3 tabindex="0">Responsive Alignment</h3>
+          <p>
+            The <code>align-*</code> and <code>self-*</code> utilities now have
+            responsive variants to match the existing <code>justify-*</code>
+            responsive classes. Change vertical alignment per breakpoint the
+            same way you change column widths.
+          </p>
+          <pre><code>&lt;div class="flex-grid with-gutters sm-align-top md-align-middle lg-align-bottom"&gt;
+  &lt;div class="flex-col sm-4"&gt;...&lt;/div&gt;
+  &lt;div class="flex-col sm-4 sm-self-stretch md-self-top"&gt;...&lt;/div&gt;
+  &lt;div class="flex-col sm-4"&gt;...&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+        </div>
+      </div>
+
       <div class="content-wrapper">
         <div class="content-well-wide">
           <h2 tabindex="0">The Grid</h2>
@@ -357,7 +463,7 @@
     <footer class="content-wrapper footer">
       <div class="content-well">
         <p style="margin-bottom: 1rem">
-          &copy; 2025 Smidgen CSS. Released under the MIT License.
+          &copy; 2026 Smidgen CSS. Released under the MIT License.
         </p>
 
         <a
