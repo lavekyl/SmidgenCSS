@@ -184,6 +184,10 @@
         margin: 0;
         font-size: 0.9rem;
       }
+      .promo-banner a {
+        color: #fff;
+        text-decoration: underline;
+      }
 
       /* New in v2 Section */
       .new-in-v2 {
@@ -193,14 +197,29 @@
       .new-in-v2 h2 {
         margin-top: 0;
       }
+
+      /* WordPress Cards */
+      .wp-card {
+        background-color: #fff;
+        border: 1px solid #eee;
+        border-radius: 8px;
+        padding: 1.75rem;
+        height: 100%;
+      }
+      .wp-card h3 {
+        margin-top: 0;
+      }
+      .wp-card .cta-button {
+        margin-top: 0.5rem;
+      }
     </style>
   </head>
   <body>
     <div class="promo-banner">
       <div class="content-well">
         <p>
-          <strong>Coming Soon:</strong> A native WordPress theme and block
-          plugin for SmidgenCSS!
+          <strong>Now Available:</strong> Smidgen Blocks plugin and Smidgen
+          theme for WordPress. <a href="#wordpress">Learn more &rarr;</a>
         </p>
       </div>
     </div>
@@ -212,12 +231,12 @@
           and simplicity.
         </p>
         <a
-          href="https://github.com/lavekyl/Smidgen/archive/refs/heads/main.zip"
+          href="https://github.com/lavekyl/SmidgenCSS/archive/refs/heads/main.zip"
           class="cta-button"
           >Download</a
         >
         <a
-          href="https://github.com/lavekyl/Smidgen"
+          href="https://github.com/lavekyl/SmidgenCSS"
           class="cta-button secondary"
           target="_blank"
           >View on GitHub</a
@@ -447,15 +466,53 @@
 &lt;/div&gt;</code></pre>
         </div>
       </div>
-      <div class="content-wrapper">
+
+      <div class="content-wrapper" id="wordpress">
         <div class="content-well">
           <h2 tabindex="0">Smidgen for WordPress</h2>
           <p>
-            Soon, you'll be able to bring the power and simplicity of SmidgenCSS
-            directly into the WordPress block editor. A native block-based theme
-            and a companion plugin with layout blocks are currently in
-            development. Stay tuned!
+            SmidgenCSS now ships with a companion block plugin and FSE block
+            theme that bring the framework's layout system directly into the
+            WordPress block editor.
           </p>
+
+          <div class="flex-grid with-gutters" style="margin-top: 2rem">
+            <div class="flex-col sm-12 md-6">
+              <div class="wp-card">
+                <h3 tabindex="0">Smidgen Blocks</h3>
+                <p>
+                  A WordPress plugin exposing the SmidgenCSS layout system as
+                  four native blocks: Grid, Column, Content Wrapper, and Content
+                  Well. Each block carries responsive controls for widths,
+                  ordering, alignment, and flex direction across every
+                  breakpoint.
+                </p>
+                <a
+                  href="https://github.com/lavekyl/SmidgenBlocks"
+                  class="cta-button"
+                  target="_blank"
+                  >View on GitHub</a
+                >
+              </div>
+            </div>
+            <div class="flex-col sm-12 md-6">
+              <div class="wp-card">
+                <h3 tabindex="0">Smidgen Theme</h3>
+                <p>
+                  A barebones FSE block theme built on SmidgenCSS and Smidgen
+                  Blocks. System fonts, monochrome palette, and a starter
+                  pattern library. Designed as a clean foundation for any
+                  WordPress project.
+                </p>
+                <a
+                  href="https://github.com/lavekyl/Smidgen"
+                  class="cta-button"
+                  target="_blank"
+                  >View on GitHub</a
+                >
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </main>
